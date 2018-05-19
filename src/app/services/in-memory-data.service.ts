@@ -205,7 +205,41 @@ export class InMemoryDataService implements InMemoryDbService {
       'description': 'Repair Right Upper Arm Tendon, Open Approach'
     }];
 
-    return {products};
+    const users = [{'id': 1, 'first_name': 'Burlie', 'last_name': 'Marvel', 'email': 'bmarvel0@webmd.com'},
+      {'id': 2, 'first_name': 'Hayley', 'last_name': 'Rusbridge', 'email': 'hrusbridge1@canalblog.com'},
+      {'id': 3, 'first_name': 'Merissa', 'last_name': 'Larrett', 'email': 'mlarrett2@ycombinator.com'},
+      {'id': 4, 'first_name': 'Isabel', 'last_name': 'Sanders', 'email': 'isanders3@mac.com'},
+      {'id': 5, 'first_name': 'Eulalie', 'last_name': 'Leglise', 'email': 'eleglise4@mail.ru'},
+      {'id': 6, 'first_name': 'Layney', 'last_name': 'Wilmot', 'email': 'lwilmot5@hhs.gov'},
+      {'id': 7, 'first_name': 'Lola', 'last_name': 'Vinecombe', 'email': 'lvinecombe6@webeden.co.uk'},
+      {'id': 8, 'first_name': 'Rikki', 'last_name': 'Flukes', 'email': 'rflukes7@stumbleupon.com'},
+      {'id': 9, 'first_name': 'Ginelle', 'last_name': 'Emmins', 'email': 'gemmins8@flickr.com'},
+      {'id': 10, 'first_name': 'Brit', 'last_name': 'Gravells', 'email': 'bgravells9@aboutads.info'},
+      {'id': 11, 'first_name': 'Rurik', 'last_name': 'Lange', 'email': 'rlangea@sitemeter.com'},
+      {'id': 12, 'first_name': 'Ruprecht', 'last_name': 'Johnes', 'email': 'rjohnesb@ucla.edu'},
+      {'id': 13, 'first_name': 'Julita', 'last_name': 'Vannozzii', 'email': 'jvannozziic@i2i.jp'},
+      {'id': 14, 'first_name': 'Noach', 'last_name': 'Fitzroy', 'email': 'nfitzroyd@blogs.com'},
+      {'id': 15, 'first_name': 'Abra', 'last_name': 'Drance', 'email': 'adrancee@boston.com'},
+      {'id': 16, 'first_name': 'Regen', 'last_name': 'Quarles', 'email': 'rquarlesf@liveinternet.ru'},
+      {'id': 17, 'first_name': 'Sherlock', 'last_name': 'Robrow', 'email': 'srobrowg@wix.com'},
+      {'id': 18, 'first_name': 'Verla', 'last_name': 'Landre', 'email': 'vlandreh@irs.gov'},
+      {'id': 19, 'first_name': 'Levey', 'last_name': 'McQuilty', 'email': 'lmcquiltyi@rakuten.co.jp'},
+      {'id': 20, 'first_name': 'Alysa', 'last_name': 'Gurney', 'email': 'agurneyj@linkedin.com'},
+      {'id': 21, 'first_name': 'Domingo', 'last_name': 'Venard', 'email': 'dvenardk@paypal.com'},
+      {'id': 22, 'first_name': 'Charla', 'last_name': 'Gerlts', 'email': 'cgerltsl@bravesites.com'},
+      {'id': 23, 'first_name': 'Sabine', 'last_name': 'Corneck', 'email': 'scorneckm@rediff.com'},
+      {'id': 24, 'first_name': 'Kitti', 'last_name': 'Ucchino', 'email': 'kucchinon@jimdo.com'},
+      {'id': 25, 'first_name': 'Karmen', 'last_name': 'Barwack', 'email': 'kbarwacko@mysql.com'},
+      {'id': 26, 'first_name': 'Hansiain', 'last_name': 'Janz', 'email': 'hjanzp@simplemachines.org'},
+      {'id': 27, 'first_name': 'Valentine', 'last_name': 'Dunston', 'email': 'vdunstonq@tripod.com'},
+      {'id': 28, 'first_name': 'Wilone', 'last_name': 'Andresen', 'email': 'wandresenr@cisco.com'},
+      {'id': 29, 'first_name': 'Hali', 'last_name': 'Gilleson', 'email': 'hgillesons@devhub.com'},
+      {'id': 30, 'first_name': 'Ephraim', 'last_name': 'Girtin', 'email': 'egirtint@smh.com.au'}];
+
+    return {
+      products,
+      users
+    };
   }
 
 }

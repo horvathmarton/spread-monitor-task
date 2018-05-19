@@ -25,7 +25,7 @@ import { MaterialModule } from './material.module';
     MaterialModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, delay: Math.floor(Math.random() * 500) + 100 }
     )
   ],
   providers: [],
