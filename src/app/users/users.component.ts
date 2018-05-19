@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {User} from '../models/User';
 import {DataStructure} from '../models/DataStructure';
 
 import {UserService} from '../services/user.service';
+import {PaginationInfo} from '../models/PaginationInfo';
 
 @Component({
   selector: 'app-users',
@@ -12,14 +13,21 @@ import {UserService} from '../services/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  users: User[];
   usersDataStructure: DataStructure = {
-    name: 'Users',
+    name: 'users',
     data: [],
     schema: ['id', 'first_name', 'last_name', 'email']
   };
 
-  constructor(private userService: UserService) { }
+  usersPaginationInfo: PaginationInfo = {
+    limit: +this.route.snapshot.queryParamMap.get('limit') || 10,
+    offset: +this.route.snapshot.queryParamMap.get('offset') || 0
+  };
+
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
     this.userService.getUsers()

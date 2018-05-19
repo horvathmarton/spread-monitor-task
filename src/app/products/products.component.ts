@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {Product} from '../models/Product';
 import {DataStructure} from '../models/DataStructure';
 
-import {ProductService} from '../services/product.service';
+import { ProductService } from '../services/product.service';
+import {PaginationInfo} from '../models/PaginationInfo';
 
 @Component({
   selector: 'app-products',
@@ -12,18 +13,27 @@ import {ProductService} from '../services/product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  products: Product[] = [];
   productsDataStructure: DataStructure = {
-    name: 'Products',
+    name: 'products',
     data: [],
-    schema: ['id', 'name', 'description']
+    schema: ['id', 'name', 'description'],
   };
 
-  constructor(private productService: ProductService) { }
+  productsPaginationInfo: PaginationInfo = {
+    limit: +this.route.snapshot.queryParamMap.get('limit') || 10,
+    offset: +this.route.snapshot.queryParamMap.get('offset') || 0
+  };
+
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
     this.productService.getProducts()
-      .subscribe(products => this.productsDataStructure.data = products);
+      .subscribe((products) => {
+        this.productsDataStructure.data = products;
+      });
   }
 
 }
