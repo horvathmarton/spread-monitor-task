@@ -11,12 +11,14 @@ import { UsersComponent } from './users/users.component';
 import {InMemoryDataService} from './services/in-memory-data.service';
 
 import { MaterialModule } from './material.module';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     UsersComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

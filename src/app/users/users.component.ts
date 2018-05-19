@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 import {User} from '../models/User';
+import {DataStructure} from '../models/DataStructure';
+
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -11,13 +13,17 @@ import {UserService} from '../services/user.service';
 export class UsersComponent implements OnInit {
 
   users: User[];
-  displayedColumns = ['id', 'first_name', 'last_name', 'email'];
+  usersDataStructure: DataStructure = {
+    name: 'Users',
+    data: [],
+    schema: ['id', 'first_name', 'last_name', 'email']
+  };
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getUsers()
-      .subscribe(users => this.users = users);
+      .subscribe(users => this.usersDataStructure.data = users);
   }
 
 }

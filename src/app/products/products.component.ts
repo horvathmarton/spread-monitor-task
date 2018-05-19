@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Product} from '../models/Product';
+import {DataStructure} from '../models/DataStructure';
+
 import {ProductService} from '../services/product.service';
 
 @Component({
@@ -10,14 +12,18 @@ import {ProductService} from '../services/product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  products: Product[];
-  displayedColumns = ['id', 'name', 'description'];
+  products: Product[] = [];
+  productsDataStructure: DataStructure = {
+    name: 'Products',
+    data: [],
+    schema: ['id', 'name', 'description']
+  };
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.productService.getProducts()
-      .subscribe(products => this.products = products);
+      .subscribe(products => this.productsDataStructure.data = products);
   }
 
 }

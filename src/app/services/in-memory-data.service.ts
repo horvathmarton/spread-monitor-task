@@ -199,10 +199,6 @@ export class InMemoryDataService implements InMemoryDbService {
       'id': 98,
       'name': 'Hatity',
       'description': 'Resection of Liver, Open Approach'
-    }, {'id': 99, 'name': 'Sonsing', 'description': 'Bypass Thor Aorta Asc to Subclav w Nonaut Sub, Open'}, {
-      'id': 100,
-      'name': 'Gembucket',
-      'description': 'Repair Right Upper Arm Tendon, Open Approach'
     }];
 
     const users = [{'id': 1, 'first_name': 'Burlie', 'last_name': 'Marvel', 'email': 'bmarvel0@webmd.com'},
