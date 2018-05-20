@@ -1,5 +1,5 @@
 .diagonal-background{
-  background-image: -webkit-linear-gradient(140deg, dodgerblue 50%, ghostwhite 50%);
+  background-image: -webkit-linear-gradient(150deg, dodgerblue 50%, ghostwhite 50%);
 }
 
 .fill-viewport {
@@ -18,6 +18,6 @@
 
 .card-list {
   background: ghostwhite;
-  box-shadow: -10px 20px 50px lightgray;
-
+  border-radius: 10px;
+  box-shadow: -20px 30px 50px -20px lightgray;
 }

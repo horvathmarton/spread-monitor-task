@@ -14,6 +14,7 @@ import { MaterialModule } from './material.module';
 import { TableComponent } from './admin/table/table.component';
 import { LoginComponent } from './admin/login/login.component';
 import { UserListComponent } from './user/user-list/user-list.component';
+import { HeaderComponent } from './user/header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
     TableComponent,
     LoginComponent,
     UserListComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
