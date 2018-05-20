@@ -2,12 +2,12 @@
   background-image: -webkit-linear-gradient(150deg, dodgerblue 50%, ghostwhite 50%);
 }
 
-.fill-viewport {
-  min-height: 100vh;
+.fill-150-viewport {
+  min-height: 120vh;
 }
 
 .fill-90-viewport {
-  min-height: 90vh;
+  min-height: 110vh;
   min-width: 90vw;
 }
 

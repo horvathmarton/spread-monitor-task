@@ -15,6 +15,7 @@ import { TableComponent } from './admin/table/table.component';
 import { LoginComponent } from './admin/login/login.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { HeaderComponent } from './user/header/header.component';
+import { CardComponent } from './user/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeaderComponent } from './user/header/header.component';
     LoginComponent,
     UserListComponent,
     HeaderComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

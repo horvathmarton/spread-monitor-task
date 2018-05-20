@@ -1,0 +1,6 @@
+.user-card {
+  background: white;
+  display: inline-block;
+  min-height: 45vh;
+  min-width: 20vw;
+}
