@@ -201,36 +201,159 @@ export class InMemoryDataService implements InMemoryDbService {
       'description': 'Resection of Liver, Open Approach'
     }];
 
-    const users = [{'id': 1, 'first_name': 'Burlie', 'last_name': 'Marvel', 'email': 'bmarvel0@webmd.com'},
-      {'id': 2, 'first_name': 'Hayley', 'last_name': 'Rusbridge', 'email': 'hrusbridge1@canalblog.com'},
-      {'id': 3, 'first_name': 'Merissa', 'last_name': 'Larrett', 'email': 'mlarrett2@ycombinator.com'},
-      {'id': 4, 'first_name': 'Isabel', 'last_name': 'Sanders', 'email': 'isanders3@mac.com'},
-      {'id': 5, 'first_name': 'Eulalie', 'last_name': 'Leglise', 'email': 'eleglise4@mail.ru'},
-      {'id': 6, 'first_name': 'Layney', 'last_name': 'Wilmot', 'email': 'lwilmot5@hhs.gov'},
-      {'id': 7, 'first_name': 'Lola', 'last_name': 'Vinecombe', 'email': 'lvinecombe6@webeden.co.uk'},
-      {'id': 8, 'first_name': 'Rikki', 'last_name': 'Flukes', 'email': 'rflukes7@stumbleupon.com'},
-      {'id': 9, 'first_name': 'Ginelle', 'last_name': 'Emmins', 'email': 'gemmins8@flickr.com'},
-      {'id': 10, 'first_name': 'Brit', 'last_name': 'Gravells', 'email': 'bgravells9@aboutads.info'},
-      {'id': 11, 'first_name': 'Rurik', 'last_name': 'Lange', 'email': 'rlangea@sitemeter.com'},
-      {'id': 12, 'first_name': 'Ruprecht', 'last_name': 'Johnes', 'email': 'rjohnesb@ucla.edu'},
-      {'id': 13, 'first_name': 'Julita', 'last_name': 'Vannozzii', 'email': 'jvannozziic@i2i.jp'},
-      {'id': 14, 'first_name': 'Noach', 'last_name': 'Fitzroy', 'email': 'nfitzroyd@blogs.com'},
-      {'id': 15, 'first_name': 'Abra', 'last_name': 'Drance', 'email': 'adrancee@boston.com'},
-      {'id': 16, 'first_name': 'Regen', 'last_name': 'Quarles', 'email': 'rquarlesf@liveinternet.ru'},
-      {'id': 17, 'first_name': 'Sherlock', 'last_name': 'Robrow', 'email': 'srobrowg@wix.com'},
-      {'id': 18, 'first_name': 'Verla', 'last_name': 'Landre', 'email': 'vlandreh@irs.gov'},
-      {'id': 19, 'first_name': 'Levey', 'last_name': 'McQuilty', 'email': 'lmcquiltyi@rakuten.co.jp'},
-      {'id': 20, 'first_name': 'Alysa', 'last_name': 'Gurney', 'email': 'agurneyj@linkedin.com'},
-      {'id': 21, 'first_name': 'Domingo', 'last_name': 'Venard', 'email': 'dvenardk@paypal.com'},
-      {'id': 22, 'first_name': 'Charla', 'last_name': 'Gerlts', 'email': 'cgerltsl@bravesites.com'},
-      {'id': 23, 'first_name': 'Sabine', 'last_name': 'Corneck', 'email': 'scorneckm@rediff.com'},
-      {'id': 24, 'first_name': 'Kitti', 'last_name': 'Ucchino', 'email': 'kucchinon@jimdo.com'},
-      {'id': 25, 'first_name': 'Karmen', 'last_name': 'Barwack', 'email': 'kbarwacko@mysql.com'},
-      {'id': 26, 'first_name': 'Hansiain', 'last_name': 'Janz', 'email': 'hjanzp@simplemachines.org'},
-      {'id': 27, 'first_name': 'Valentine', 'last_name': 'Dunston', 'email': 'vdunstonq@tripod.com'},
-      {'id': 28, 'first_name': 'Wilone', 'last_name': 'Andresen', 'email': 'wandresenr@cisco.com'},
-      {'id': 29, 'first_name': 'Hali', 'last_name': 'Gilleson', 'email': 'hgillesons@devhub.com'},
-      {'id': 30, 'first_name': 'Ephraim', 'last_name': 'Girtin', 'email': 'egirtint@smh.com.au'}];
+    const users = [{
+      'id': 1,
+      'first_name': 'Sheba',
+      'last_name': 'Millbank',
+      'email': 'smillbank0@ameblo.jp',
+      'password': 'ygYtVSlG8Tsf',
+      'username': 'smillbank0'
+    },
+      {
+        'id': 2,
+        'first_name': 'Tera',
+        'last_name': 'Kaindl',
+        'email': 'tkaindl1@upenn.edu',
+        'password': 'itWIUw8MNx',
+        'username': 'tkaindl1'
+      },
+      {
+        'id': 3,
+        'first_name': 'Traci',
+        'last_name': 'Roseaman',
+        'email': 'troseaman2@cnbc.com',
+        'password': 'MdBTw1H6W',
+        'username': 'troseaman2'
+      },
+      {
+        'id': 4,
+        'first_name': 'Dorian',
+        'last_name': 'Bayfield',
+        'email': 'dbayfield3@imgur.com',
+        'password': 'zQSTcWeQ5UH',
+        'username': 'dbayfield3'
+      },
+      {
+        'id': 5,
+        'first_name': 'Lilah',
+        'last_name': 'Stener',
+        'email': 'lstener4@yellowbook.com',
+        'password': 'OABTdHRV9sm',
+        'username': 'lstener4'
+      },
+      {
+        'id': 6,
+        'first_name': 'Korry',
+        'last_name': 'Mankor',
+        'email': 'kmankor5@comsenz.com',
+        'password': 'AjgXpql49yag',
+        'username': 'kmankor5'
+      },
+      {
+        'id': 7,
+        'first_name': 'Daniel',
+        'last_name': 'O\'Concannon',
+        'email': 'doconcannon6@globo.com',
+        'password': '3KTvRqTtS2',
+        'username': 'doconcannon6'
+      },
+      {
+        'id': 8,
+        'first_name': 'Trisha',
+        'last_name': 'Gresty',
+        'email': 'tgresty7@networksolutions.com',
+        'password': 'vgQoEQ',
+        'username': 'tgresty7'
+      },
+      {
+        'id': 9,
+        'first_name': 'Ina',
+        'last_name': 'Stormont',
+        'email': 'istormont8@blog.com',
+        'password': 'dLO4tp501gM',
+        'username': 'istormont8'
+      },
+      {
+        'id': 10,
+        'first_name': 'Tallulah',
+        'last_name': 'MacGee',
+        'email': 'tmacgee9@theatlantic.com',
+        'password': 'IUxzRklSd',
+        'username': 'tmacgee9'
+      },
+      {
+        'id': 11,
+        'first_name': 'Anabal',
+        'last_name': 'Casaccia',
+        'email': 'acasacciaa@who.int',
+        'password': 'ifMxmgpcy4',
+        'username': 'acasacciaa'
+      },
+      {
+        'id': 12,
+        'first_name': 'Tallou',
+        'last_name': 'Cracknell',
+        'email': 'tcracknellb@simplemachines.org',
+        'password': 'G10Khlow',
+        'username': 'tcracknellb'
+      },
+      {
+        'id': 13,
+        'first_name': 'Maryann',
+        'last_name': 'Klain',
+        'email': 'mklainc@technorati.com',
+        'password': '8MFs4YWvQ',
+        'username': 'mklainc'
+      },
+      {
+        'id': 14,
+        'first_name': 'Philipa',
+        'last_name': 'Leathlay',
+        'email': 'pleathlayd@unc.edu',
+        'password': '2r5mit4XCa',
+        'username': 'pleathlayd'
+      },
+      {
+        'id': 15,
+        'first_name': 'Flemming',
+        'last_name': 'Iddiens',
+        'email': 'fiddiense@cloudflare.com',
+        'password': 'KN28l6w9TH',
+        'username': 'fiddiense'
+      },
+      {
+        'id': 16,
+        'first_name': 'Nels',
+        'last_name': 'Woodger',
+        'email': 'nwoodgerf@icq.com',
+        'password': 'pQFctyx8eWLV',
+        'username': 'nwoodgerf'
+      },
+      {'id': 17, 'first_name': 'Fletcher', 'last_name': 'O\'Dea', 'email': 'fodeag@webmd.com', 'password': '1D5lSu', 'username': 'fodeag'},
+      {
+        'id': 18,
+        'first_name': 'Onida',
+        'last_name': 'Grichukhin',
+        'email': 'ogrichukhinh@meetup.com',
+        'password': '5QRB3RQmu5',
+        'username': 'ogrichukhinh'
+      },
+      {
+        'id': 19,
+        'first_name': 'Ely',
+        'last_name': 'Vasiltsov',
+        'email': 'evasiltsovi@biblegateway.com',
+        'password': 'prQVcPa29IKL',
+        'username': 'evasiltsovi'
+      },
+      {
+        'id': 20,
+        'first_name': 'Husain',
+        'last_name': 'Rowett',
+        'email': 'hrowettj@wp.com',
+        'password': '7qkyCHy',
+        'username': 'hrowettj'
+      }];
 
     return {
       products,
