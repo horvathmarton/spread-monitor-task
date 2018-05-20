@@ -5,14 +5,14 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ProductsComponent } from './products/products.component';
-import { UsersComponent } from './users/users.component';
+import { ProductsComponent } from './admin/products/products.component';
+import { UsersComponent } from './admin/users/users.component';
 
 import {InMemoryDataService} from './services/in-memory-data.service';
 
 import { MaterialModule } from './material.module';
-import { TableComponent } from './table/table.component';
-import { LoginComponent } from './login/login.component';
+import { TableComponent } from './admin/table/table.component';
+import { LoginComponent } from './admin/login/login.component';
 
 @NgModule({
   declarations: [

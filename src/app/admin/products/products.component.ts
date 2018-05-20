@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import {DataStructure} from '../models/DataStructure';
+import {DataStructure} from '../../models/DataStructure';
 
-import { ProductService } from '../services/product.service';
-import {PaginationInfo} from '../models/PaginationInfo';
+import { ProductService } from '../../services/product.service';
+import {PaginationInfo} from '../../models/PaginationInfo';
 
 @Component({
   selector: 'app-products',

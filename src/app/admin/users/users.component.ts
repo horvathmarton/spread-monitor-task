@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import {DataStructure} from '../models/DataStructure';
 
-import {UserService} from '../services/user.service';
+import {UserService} from '../../services/user.service';
 import {PaginationInfo} from '../models/PaginationInfo';
 
 @Component({
