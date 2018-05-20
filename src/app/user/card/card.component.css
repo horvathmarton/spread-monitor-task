@@ -4,3 +4,26 @@
   min-height: 45vh;
   min-width: 20vw;
 }
+
+.profile-picture {
+  align-items: center;
+  background: pink;
+  color: deeppink;
+  display: flex;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.25em;
+  height: 10vh;
+  position: relative;
+  width: 10vh;
+}
+
+.profile-picture__status-circle {
+  background: white;
+  border: 2px solid deeppink;
+  bottom: 8%;
+  left: 8%;
+  height: 1.25vh;
+  box-shadow: 0 0 0 2px white;
+  position: absolute;
+  width: 1.25vh;
+}
