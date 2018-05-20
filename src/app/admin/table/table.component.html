@@ -1,10 +1,25 @@
 <h1 class="title">{{ dataStructure.name | titlecase }}</h1>
 
-<mat-paginator (page)="onPagination($event)"
-               [length]="dataStructure.data.length"
-               [pageSizeOptions]="[5, 10, 20, 50]"
-               [pageSize]="paginationInfo.limit">
-</mat-paginator>
+<div class="ml-5 control">
+  <form (submit)="onSearch(f)" #f="ngForm" class="search">
+
+    <mat-form-field class="mr-3 search__field">
+      <input matInput ngModel name="term" placeholder="Search term">
+    </mat-form-field>
+
+    <button type="submit" class="search__button" mat-button>
+      Search
+    </button>
+
+  </form>
+
+  <mat-paginator class="paginator"
+                 (page)="onPagination($event)"
+                 [length]="dataStructure.data.length"
+                 [pageSizeOptions]="[5, 10, 20, 50]"
+                 [pageSize]="paginationInfo.limit">
+  </mat-paginator>
+</div>
 
 <table class="table" mat-table [dataSource]="dataStructure.data | slice:firstEntryIndex:lastEntryIndex">
 

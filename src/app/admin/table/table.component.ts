@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {PageEvent} from '@angular/material';
+import { PageEvent } from '@angular/material';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -14,11 +16,18 @@ export class TableComponent implements OnInit {
   firstEntryIndex: number;
   lastEntryIndex: number;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   onPagination(event: PageEvent) {
     this.firstEntryIndex = event.pageIndex * event.pageSize;
     this.lastEntryIndex = this.firstEntryIndex + event.pageSize;
+  }
+
+  onSearch(form: NgForm) {
+    const term = form.value.term;
+    console.log(term);
+    if (!term) { return; }
+    this.router.navigate(['/products'], { queryParams: { filter: term } });
   }
 
   ngOnInit() {
