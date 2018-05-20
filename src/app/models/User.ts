@@ -5,4 +5,6 @@ export class User {
   email: string;
   password: string;
   username: string;
+  tasks: number;
+  alert: boolean;
 }
