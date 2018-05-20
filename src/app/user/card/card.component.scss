@@ -1,3 +1,12 @@
+$green-primary: #CEF0EF;
+$green-secondary: #00B4AD;
+$blue-primary: #D8E6FF;
+$blue-secondary: #518BFD;
+$yellow-primary: #FFF0DB;
+$yellow-secondary: #FCB148;
+$red-primary: #FEDFE5;
+$red-secondary: #FA5979;
+
 .user-card {
   background: white;
   display: inline-block;
@@ -6,8 +15,8 @@
 
 .profile-picture {
   align-items: center;
-  background: pink;
-  color: deeppink;
+  background: $red-primary;
+  color: $red-secondary;
   display: flex;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 1.25em;
@@ -18,7 +27,7 @@
 
 .profile-picture__status-circle {
   background: white;
-  border: 2px solid deeppink;
+  border: 2px solid $red-secondary;
   bottom: 8%;
   left: 8%;
   height: 1.25vh;

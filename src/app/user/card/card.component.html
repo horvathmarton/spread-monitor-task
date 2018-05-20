@@ -14,14 +14,14 @@
     </div>
 
     <div class="text-secondary mt-4 user-card__icons">
-      <i class="fa fa-pencil-square-o mx-4"></i>
-      <i class="fa fa-bell-o mx-4" [ngClass]="(user.alert)?'text-primary':'text-secondary'"></i>
-      <i class="fa fa-trash-o mx-4"></i>
+      <i class="fa fa-pencil-square-o mx-4 p-3"></i>
+      <i class="fa fa-bell-o mx-4 p-3" [ngClass]="(user.alert)?'text-primary':'text-secondary'"></i>
+      <i class="fa fa-trash-o mx-4 p-3"></i>
     </div>
 
     <div class="py-3 mt-3 user-card__activity">
-      <img src="../../../assets/graph.png" class="img-fluid mx-4 user-card__graph">
-      <div class="mx-4 user-card__tasks">
+      <img src="../../../assets/graph.png" class="img-fluid ml-5 user-card__graph">
+      <div class="mr-5 user-card__tasks">
         <div class="user-card__task-count">{{user.tasks}}</div>
         <div class="text-secondary user-card__task-text">Open Tasks</div>
       </div>
