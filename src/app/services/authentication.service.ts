@@ -19,7 +19,7 @@ export class AuthenticationService {
     this.userService.getUsers()
       .subscribe(users => {
         if (users.find(user => user.email === email && user.password === password)) {
-          this.token = 'I am a JWT!';
+          localStorage.setItem('token', 'I am JWT!');
           return this.router.navigate(['/products']);
         }
 
@@ -27,10 +27,8 @@ export class AuthenticationService {
       });
   }
 
-  isAuthenticated() {
-    if (this.token) {
-      return !!(this.token);
-    }
+  isAuthenticated(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 
   getToken(): string {
@@ -38,6 +36,6 @@ export class AuthenticationService {
   }
 
   logout(): void {
-    this.token = undefined;
+    localStorage.removeItem('token');
   }
 }
