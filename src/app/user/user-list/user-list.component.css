@@ -1,0 +1,23 @@
+.diagonal-background{
+  background-image: -webkit-linear-gradient(140deg, dodgerblue 50%, ghostwhite 50%);
+}
+
+.fill-viewport {
+  min-height: 100vh;
+}
+
+.fill-90-viewport {
+  min-height: 90vh;
+  min-width: 90vw;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.card-list {
+  background: ghostwhite;
+  box-shadow: -10px 20px 50px lightgray;
+
+}
