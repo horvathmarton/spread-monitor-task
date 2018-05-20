@@ -12,6 +12,7 @@ import {InMemoryDataService} from './services/in-memory-data.service';
 
 import { MaterialModule } from './material.module';
 import { TableComponent } from './table/table.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TableComponent } from './table/table.component';
     ProductsComponent,
     UsersComponent,
     TableComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

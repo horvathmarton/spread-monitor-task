@@ -1,0 +1,19 @@
+<h1 class="title">Authentication required</h1>
+
+<form class="login">
+
+  <mat-form-field class="login__field">
+    <input matInput placeholder="email">
+  </mat-form-field>
+
+  <mat-form-field class="login__field">
+    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+  </mat-form-field>
+
+  <button type="submit" mat-button>
+    Login
+  </button>
+
+</form>
+
