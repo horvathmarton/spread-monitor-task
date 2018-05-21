@@ -15,8 +15,6 @@ $red-secondary: #FA5979;
 
 .profile-picture {
   align-items: center;
-  background: $red-primary;
-  color: $red-secondary;
   display: flex;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 1.25em;
@@ -25,9 +23,44 @@ $red-secondary: #FA5979;
   width: 10vh;
 }
 
+.green-icon {
+  background: $green-primary;
+  color: $green-secondary;
+}
+
+.green-status-circle {
+  border: 2px solid $green-secondary;
+}
+
+.blue-icon {
+  background: $blue-primary;
+  color: $blue-secondary;
+}
+
+.blue-status-circle {
+  border: 2px solid $blue-secondary;
+}
+
+.yellow-icon {
+  background: $yellow-primary;
+  color: $yellow-secondary;
+}
+
+.yellow-status-circle {
+  border: 2px solid $yellow-secondary;
+}
+
+.red-icon {
+  background: $red-primary;
+  color: $red-secondary;
+}
+
+.red-status-circle {
+  border: 2px solid $red-secondary;
+}
+
 .profile-picture__status-circle {
   background: white;
-  border: 2px solid $red-secondary;
   bottom: 8%;
   left: 8%;
   height: 1.25vh;

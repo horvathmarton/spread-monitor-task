@@ -1,10 +1,14 @@
 <article class="user-card m-4">
   <div class="text-center mt-4">
 
-    <div class="container rounded-circle mx-auto profile-picture">
+    <div class="container rounded-circle mx-auto profile-picture"
+         [ngClass]="{'0': 'green-icon','1':'blue-icon','2':'yellow-icon','3':'red-icon'}[profileIconColor]">
       <span class="mx-auto">
         {{ user.first_name[0] + user.last_name[0] }}
-        <span class="rounded-circle profile-picture__status-circle"></span>
+        <span class="rounded-circle profile-picture__status-circle"
+              [ngClass]="{'0': 'green-status-circle','1':'blue-status-circle',
+              '2':'yellow-status-circle','3':'red-status-circle'}[profileIconColor]">
+      </span>
       </span>
     </div>
 
