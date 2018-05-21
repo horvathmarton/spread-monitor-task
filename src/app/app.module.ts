@@ -42,7 +42,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     MaterialModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, delay: Math.floor(Math.random() * 500) + 100 }
+      InMemoryDataService, { dataEncapsulation: false, delay: Math.floor(Math.random() * 4900) + 100 }
     )
   ],
   providers: [],
