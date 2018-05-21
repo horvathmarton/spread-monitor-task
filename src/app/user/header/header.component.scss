@@ -1,6 +1,9 @@
+$primary-color: white;
+$shadow-color: lightgray;
+
 .header {
-  background: white;
+  background: $primary-color;
   border-radius: 15px 15px 0 0;
-  box-shadow: 0 10px 50px -30px lightgray;
+  box-shadow: 0 10px 50px -30px $shadow-color;
   min-height: 8vh;
 }
