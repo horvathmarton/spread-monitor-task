@@ -5,6 +5,7 @@ import {User} from '../../models/User';
 import { DataStructure } from '../../models/DataStructure';
 
 import { UserService } from '../../services/user.service';
+import {UserEditorDialogComponent} from './user-editor-dialog/user-editor-dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,8 @@ export class UsersComponent implements OnInit {
   usersDataStructure: DataStructure = {
     name: 'users',
     data: [],
-    schema: ['id', 'first_name', 'last_name', 'email', 'username']
+    schema: ['id', 'first_name', 'last_name', 'email', 'username'],
+    editorDialog: UserEditorDialogComponent
   };
 
   constructor(

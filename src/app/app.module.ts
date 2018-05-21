@@ -18,6 +18,7 @@ import { CardComponent } from './user/card/card.component';
 import { ProductEditorDialogComponent } from './admin/products/product-editor-dialog/product-editor-dialog.component';
 
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { UserEditorDialogComponent } from './admin/users/user-editor-dialog/user-editor-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     UserListComponent,
     HeaderComponent,
     CardComponent,
-    ProductEditorDialogComponent
+    ProductEditorDialogComponent,
+    UserEditorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,9 @@ import { InMemoryDataService } from './services/in-memory-data.service';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ProductEditorDialogComponent]
+  entryComponents: [
+    ProductEditorDialogComponent,
+    UserEditorDialogComponent
+  ]
 })
 export class AppModule { }

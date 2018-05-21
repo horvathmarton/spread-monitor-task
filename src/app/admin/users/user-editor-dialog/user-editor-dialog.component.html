@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Edit record</h1>
+
+<mat-dialog-content class="editor" [formGroup]="editorForm">
+
+  <mat-form-field class="editor__field">
+    <input matInput placeholder="First name" formControlName="first_name">
+  </mat-form-field>
+
+  <mat-form-field class="editor__field">
+    <input matInput placeholder="Last name" formControlName="last_name">
+  </mat-form-field>
+
+  <mat-form-field class="editor__field">
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="editor__field">
+    <input matInput placeholder="Username" formControlName="username">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="onClose()">Close</button>
+  <button class="mat-raised-button mat-primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>

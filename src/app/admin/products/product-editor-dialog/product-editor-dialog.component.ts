@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-editor-dialog',
+  selector: 'app-product-editor-dialog',
   templateUrl: './product-editor-dialog.component.html',
   styleUrls: ['./product-editor-dialog.component.scss']
 })
