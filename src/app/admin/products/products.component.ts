@@ -18,7 +18,8 @@ export class ProductsComponent implements OnInit {
     name: 'products',
     data: [],
     schema: ['id', 'name', 'description'],
-    editorDialog: ProductEditorDialogComponent
+    editorDialog: ProductEditorDialogComponent,
+    updateFunction: this.updateProduct.bind(this)
   };
 
   constructor(
@@ -27,7 +28,14 @@ export class ProductsComponent implements OnInit {
     private productService: ProductService
   ) { }
 
-  filterProducts(products: Product[]): Product[] {
+  updateProduct(id: number, data: Object) {
+    const product = this.products.find(p => p.id === id);
+    product.name = data.name;
+    product.description = data.description;
+    this.productService.updateProduct(product).subscribe();
+  }
+
+  private filterProducts(products: Product[]): Product[] {
     const filterTerm = this.route.snapshot.queryParamMap.get('filter');
     if (!filterTerm) { return products; }
     return products.filter(p => p.name.includes(filterTerm) || p.description.includes(filterTerm));

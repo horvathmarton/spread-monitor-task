@@ -46,7 +46,9 @@ export class TableComponent implements OnInit {
     config.data = record;
 
     const dialogRef = this.dialog.open(this.dataStructure.editorDialog, config);
-    dialogRef.afterClosed().subscribe(data => console.log(data));
+    dialogRef.afterClosed().subscribe(data => {
+      this.dataStructure.updateFunction(record.id, data);
+    });
   }
 
   private getQueryParams() {
