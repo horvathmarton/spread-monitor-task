@@ -13,7 +13,7 @@ export class AuthenticationService {
     private userService: UserService
   ) { }
 
-  login(email: string, password: string): Promise<boolean> {
+  login(email: string, password: string): void {
     this.userService.getUsers()
       .subscribe(users => {
         if (users.find(user => user.email === email && user.password === password)) {

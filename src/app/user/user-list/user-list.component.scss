@@ -1,18 +1,17 @@
-.diagonal-background{
-  background-image: -webkit-linear-gradient(150deg, dodgerblue 50%, ghostwhite 50%);
-}
+$primary-color: ghostwhite;
+$secondary-color: dodgerblue;
+$shadow-color: lightgray;
 
-.fill-150-viewport {
-  min-height: 120vh;
-}
+.user-view{
 
-.vertical-center {
-  display: flex;
   align-items: center;
-}
+  background-image: -webkit-linear-gradient(150deg, $secondary-color 50%, $primary-color 50%);
+  display: flex;
 
-.card-list {
-  background: ghostwhite;
-  border-radius: 15px;
-  box-shadow: -20px 30px 50px -20px lightgray;
+  .card-list {
+    background: $primary-color;
+    border-radius: 15px;
+    box-shadow: -20px 30px 50px -20px $shadow-color;
+  }
+
 }
