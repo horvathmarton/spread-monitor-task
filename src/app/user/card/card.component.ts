@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import {User} from '../../models/User';
 
@@ -9,16 +9,7 @@ import {User} from '../../models/User';
 })
 export class CardComponent implements OnInit {
 
-  user: User = {
-    id: 1,
-    first_name: 'Marton',
-    last_name: 'Horvath',
-    email: 'hello@bello.com',
-    password: 'asdf',
-    username: 'mhorvath',
-    tasks: 34,
-    alert: true
-  };
+  @Input() user;
 
   constructor() { }
 
