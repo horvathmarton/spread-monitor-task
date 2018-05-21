@@ -32,7 +32,7 @@ export class AuthenticationService {
   }
 
   getToken(): string {
-    return this.token;
+    return localStorage.getItem('token');
   }
 
   logout(): void {

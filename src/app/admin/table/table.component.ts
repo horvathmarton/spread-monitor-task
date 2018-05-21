@@ -3,6 +3,8 @@ import { PageEvent } from '@angular/material';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import {AuthenticationService} from '../../services/authentication.service';
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -17,7 +19,10 @@ export class TableComponent implements OnInit {
   lastEntryIndex: number;
   filterTerm: string;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService
+  ) { }
 
   onPagination(event: PageEvent) {
     this.firstEntryIndex = event.pageIndex * event.pageSize;
@@ -32,9 +37,10 @@ export class TableComponent implements OnInit {
 
   getQueryParams() {
     return {
-      filter: this.filterTerm,
       offset: this.firstEntryIndex,
-      limit: this.lastEntryIndex - this.firstEntryIndex
+      limit: this.lastEntryIndex - this.firstEntryIndex,
+      auth: this.authService.getToken(),
+      filter: this.filterTerm
     };
   }
 
