@@ -19,6 +19,7 @@ import { ProductEditorDialogComponent } from './admin/products/product-editor-di
 
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { UserEditorDialogComponent } from './admin/users/user-editor-dialog/user-editor-dialog.component';
+import { NavigationComponent } from './admin/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserEditorDialogComponent } from './admin/users/user-editor-dialog/user
     HeaderComponent,
     CardComponent,
     ProductEditorDialogComponent,
-    UserEditorDialogComponent
+    UserEditorDialogComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

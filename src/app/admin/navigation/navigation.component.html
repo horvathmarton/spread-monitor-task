@@ -1,0 +1,18 @@
+<mat-toolbar>
+
+  <section>
+    <button mat-raised-button routerLink="/" class="mx-3">Home</button>
+  </section>
+
+  <section *ngIf="isAuthernticated()" class="authenticated">
+    <button mat-raised-button routerLink="/products" class="mx-3">Products</button>
+    <button mat-raised-button routerLink="/users" class="mx-3">Users</button>
+    <button mat-raised-button (click)="logout()" class="mx-3">Logout</button>
+  </section>
+
+  <section *ngIf="!isAuthernticated()" class="unauthenticated">
+    <button mat-raised-button routerLink="/login" class="mx-3">Login</button>
+  </section>
+
+</mat-toolbar>
+

@@ -1,0 +1,12 @@
+@mixin pull-right() {
+  right: 0;
+  position: absolute;
+}
+
+.authenticated {
+  @include pull-right();
+}
+
+.unauthenticated {
+  @include pull-right();
+}
