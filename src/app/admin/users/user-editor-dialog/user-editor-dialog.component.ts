@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {ProductEditorDialogComponent} from '../../products/product-editor-dialog/product-editor-dialog.component';
 
 @Component({
@@ -14,6 +14,7 @@ export class UserEditorDialogComponent implements OnInit {
   last_name: string;
   email: string;
   username: string;
+  editorForm: FormGroup;
 
   constructor(private dialogRef: MatDialogRef<ProductEditorDialogComponent>,
               @Inject(MAT_DIALOG_DATA) private data: any) {
@@ -33,10 +34,10 @@ export class UserEditorDialogComponent implements OnInit {
 
   ngOnInit() {
     this.editorForm = new FormGroup({
-      'first_name': new FormControl(this.first_name),
-      'last_name': new FormControl(this.last_name),
-      'email': new FormControl(this.email),
-      'username': new FormControl(this.username)
+      'first_name': new FormControl(this.first_name, Validators.required),
+      'last_name': new FormControl(this.last_name, Validators.required),
+      'email': new FormControl(this.email, [Validators.required, Validators.email]),
+      'username': new FormControl(this.username, Validators.required)
     });
   }
 

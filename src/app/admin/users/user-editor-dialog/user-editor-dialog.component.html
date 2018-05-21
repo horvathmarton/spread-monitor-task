@@ -4,18 +4,30 @@
 
   <mat-form-field class="editor__field">
     <input matInput placeholder="First name" formControlName="first_name">
+    <mat-error *ngIf="!editorForm.get('first_name').valid && editorForm.get('first_name').touched">
+      Please enter a valid first name!
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field class="editor__field">
     <input matInput placeholder="Last name" formControlName="last_name">
+    <mat-error *ngIf="!editorForm.get('last_name').valid && editorForm.get('last_name').touched">
+      Please enter a valid last name!
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field class="editor__field">
     <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="!editorForm.get('email').valid && editorForm.get('email').touched">
+      Please enter a valid email address!
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field class="editor__field">
     <input matInput placeholder="Username" formControlName="username">
+    <mat-error *ngIf="!editorForm.get('username').valid && editorForm.get('username').touched">
+      Please enter a valid username!
+    </mat-error>
   </mat-form-field>
 
 </mat-dialog-content>

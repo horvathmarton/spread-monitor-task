@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-editor-dialog',
@@ -29,8 +29,8 @@ export class ProductEditorDialogComponent implements OnInit {
 
   ngOnInit() {
     this.editorForm = new FormGroup({
-      'name': new FormControl(this.name),
-      'description': new FormControl(this.description)
+      'name': new FormControl(this.name, Validators.required),
+      'description': new FormControl(this.description, Validators.required)
     });
   }
 
