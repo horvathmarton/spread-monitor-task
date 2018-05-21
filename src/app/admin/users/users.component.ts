@@ -5,7 +5,6 @@ import {DataStructure} from '../../models/DataStructure';
 import {PaginationInfo} from '../../models/PaginationInfo';
 
 import {UserService} from '../../services/user.service';
-import {Product} from '../../models/Product';
 import {User} from '../../models/User';
 
 @Component({
@@ -19,7 +18,7 @@ export class UsersComponent implements OnInit {
   usersDataStructure: DataStructure = {
     name: 'users',
     data: [],
-    schema: ['id', 'first_name', 'last_name', 'email']
+    schema: ['id', 'first_name', 'last_name', 'email', 'username']
   };
 
   usersPaginationInfo: PaginationInfo = {
@@ -37,7 +36,8 @@ export class UsersComponent implements OnInit {
     const filterTerm = this.route.snapshot.queryParamMap.get('filter');
     if (!filterTerm) { return users; }
     return users.filter((u) => {
-      return u.first_name.includes(filterTerm) || u.last_name.includes(filterTerm) || u.email.includes(filterTerm);
+      return u.first_name.includes(filterTerm) || u.last_name.includes(filterTerm)
+        || u.email.includes(filterTerm) || u.username.includes(filterTerm);
     });
   }
 

@@ -30,6 +30,6 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="dataStructure.schema"></tr>
-  <tr mat-row *matRowDef="let row; columns: dataStructure.schema;"></tr>
+  <tr mat-row *matRowDef="let row; columns: dataStructure.schema;" (click)="editRecord(row)"></tr>
 
 </table>

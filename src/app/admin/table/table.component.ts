@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PageEvent } from '@angular/material';
+import { MatRow, PageEvent } from '@angular/material';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -37,11 +37,15 @@ export class TableComponent implements OnInit {
 
   getQueryParams() {
     return {
-      offset: this.firstEntryIndex,
       limit: this.lastEntryIndex - this.firstEntryIndex,
+      offset: this.firstEntryIndex,
       auth: this.authService.getToken(),
       filter: this.filterTerm
     };
+  }
+
+  editRecord(row: MatRow) {
+    alert(row);
   }
 
   ngOnInit() {
