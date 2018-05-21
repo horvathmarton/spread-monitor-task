@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Product } from '../../models/Product';
 import { DataStructure } from '../../models/DataStructure';
+import { ProductEditorDialogComponent } from './product-editor-dialog/product-editor-dialog.component';
 
 import { ProductService } from '../../services/product.service';
 
@@ -17,6 +18,7 @@ export class ProductsComponent implements OnInit {
     name: 'products',
     data: [],
     schema: ['id', 'name', 'description'],
+    editorDialog: ProductEditorDialogComponent
   };
 
   constructor(

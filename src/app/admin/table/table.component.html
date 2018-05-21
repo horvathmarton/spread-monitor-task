@@ -4,7 +4,7 @@
   <form (ngSubmit)="onSearch()" [formGroup]="searchForm" class="search">
 
     <mat-form-field class="mr-3 search__field">
-      <input matInput ngModel formControlName="searchTerm" placeholder="Enter your search filter here">
+      <input matInput formControlName="searchTerm" placeholder="Enter your search filter here">
     </mat-form-field>
 
     <button type="submit" mat-button>Search</button>

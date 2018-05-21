@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { LoginComponent } from './admin/login/login.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { HeaderComponent } from './user/header/header.component';
 import { CardComponent } from './user/card/card.component';
+import { ProductEditorDialogComponent } from './admin/products/product-editor-dialog/product-editor-dialog.component';
 
 import { InMemoryDataService } from './services/in-memory-data.service';
 
@@ -28,11 +29,11 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     UserListComponent,
     HeaderComponent,
     CardComponent,
+    ProductEditorDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
@@ -41,6 +42,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProductEditorDialogComponent]
 })
 export class AppModule { }

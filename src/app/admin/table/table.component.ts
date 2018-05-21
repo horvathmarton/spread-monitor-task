@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatRow, PageEvent } from '@angular/material';
-import {FormControl, FormGroup, NgForm} from '@angular/forms';
+import {MatDialog, MatDialogConfig, MatRow, PageEvent} from '@angular/material';
+import {FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthenticationService } from '../../services/authentication.service';
@@ -22,6 +22,7 @@ export class TableComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private dialog: MatDialog,
     private authService: AuthenticationService
   ) { }
 
@@ -36,8 +37,16 @@ export class TableComponent implements OnInit {
     this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
-  editRecord(row: MatRow): void {
-    alert(row);
+  editRecord(record: MatRow): void {
+    const config = new MatDialogConfig();
+    config.disableClose = true;
+    config.autoFocus = true;
+    config.width = '50vw';
+
+    config.data = record;
+
+    const dialogRef = this.dialog.open(this.dataStructure.editorDialog, config);
+    dialogRef.afterClosed().subscribe(data => console.log(data));
   }
 
   private getQueryParams() {

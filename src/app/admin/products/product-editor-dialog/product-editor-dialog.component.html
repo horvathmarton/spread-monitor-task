@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Edit record</h1>
+
+<mat-dialog-content class="editor" [formGroup]="editorForm">
+
+  <mat-form-field class="editor__field">
+    <input matInput placeholder="Name" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field class="editor__field">
+    <textarea matInput placeholder="Description" formControlName="description"></textarea>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="onClose()">Close</button>
+  <button class="mat-raised-button mat-primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>
