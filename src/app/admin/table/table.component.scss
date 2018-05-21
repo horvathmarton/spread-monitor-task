@@ -1,24 +1,21 @@
-.title {
-  font-family: Roboto,"Helvetica Neue",sans-serif;
-  font-size: 3em;
-  text-align: center;
-}
-
-.table {
-  min-width: 100vw;
-}
-
 .control {
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "search paginator";
-}
 
-.search {
-  grid-area: search;
-}
+  .search {
+    grid-area: search;
 
-.paginator {
-  grid-area: paginator;
+    .search__field {
+      width: 20vw;
+    }
+
+  }
+
+  .paginator {
+    grid-area: paginator;
+  }
+
 }

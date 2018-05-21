@@ -1,15 +1,13 @@
-<h1 class="title">{{ dataStructure.name | titlecase }}</h1>
+<h1 class="text-center display-4 my-5">{{ dataStructure.name | titlecase }}</h1>
 
-<div class="ml-5 control">
+<section class="ml-5 control">
   <form (submit)="onSearch(f)" #f="ngForm" class="search">
 
     <mat-form-field class="mr-3 search__field">
-      <input matInput ngModel name="term" placeholder="Search term">
+      <input matInput ngModel name="term" placeholder="Enter your search filter here">
     </mat-form-field>
 
-    <button type="submit" class="search__button" mat-button>
-      Search
-    </button>
+    <button type="submit" mat-button>Search</button>
 
   </form>
 
@@ -17,14 +15,13 @@
                  (page)="onPagination($event)"
                  [length]="dataStructure.data.length"
                  [pageSizeOptions]="[5, 10, 20, 50]"
-                 [pageSize]="limit">
+                 [pageSize]="lastEntryIndex - firstEntryIndex">
   </mat-paginator>
-</div>
+</section>
 
 <table class="table" mat-table [dataSource]="dataStructure.data | slice:firstEntryIndex:lastEntryIndex">
 
-  <ng-container *ngFor="let column of dataStructure.schema"
-                matColumnDef="{{column}}">
+  <ng-container *ngFor="let column of dataStructure.schema" matColumnDef="{{column}}">
     <th mat-header-cell *matHeaderCellDef> {{ column }} </th>
     <td mat-cell *matCellDef="let item"> {{item[column]}} </td>
   </ng-container>

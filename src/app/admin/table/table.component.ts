@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatRow, PageEvent } from '@angular/material';
 import { NgForm } from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import {AuthenticationService} from '../../services/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-table',
@@ -24,28 +24,28 @@ export class TableComponent implements OnInit {
     private authService: AuthenticationService
   ) { }
 
-  onPagination(event: PageEvent) {
+  onPagination(event: PageEvent): void {
     this.firstEntryIndex = event.pageIndex * event.pageSize;
     this.lastEntryIndex = this.firstEntryIndex + event.pageSize;
     this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
-  onSearch(form: NgForm) {
+  onSearch(form: NgForm): void {
     this.filterTerm = form.value.term;
     this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
-  getQueryParams() {
+  editRecord(row: MatRow): void {
+    alert(row);
+  }
+
+  private getQueryParams() {
     return {
       limit: this.lastEntryIndex - this.firstEntryIndex,
       offset: this.firstEntryIndex,
       auth: this.authService.getToken(),
       filter: this.filterTerm
     };
-  }
-
-  editRecord(row: MatRow) {
-    alert(row);
   }
 
   ngOnInit() {
