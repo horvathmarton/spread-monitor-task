@@ -6,13 +6,13 @@ import { UsersComponent } from './admin/users/users.component';
 import { LoginComponent } from './admin/login/login.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 
-import {AuthGuardService} from './services/auth-guard.service';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: UserListComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'products', component: ProductsComponent, canActivate: [AuthGuardService] },
-  { path: 'users', component: UsersComponent, canActivate: [AuthGuardService] }
+  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

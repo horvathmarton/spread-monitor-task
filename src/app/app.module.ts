@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FormsModule} from '@angular/forms';
 
+import { MaterialModule } from './material.module';
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './admin/products/products.component';
 import { UsersComponent } from './admin/users/users.component';
@@ -13,10 +16,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { HeaderComponent } from './user/header/header.component';
 import { CardComponent } from './user/card/card.component';
 
-import {InMemoryDataService} from './services/in-memory-data.service';
-
-import { MaterialModule } from './material.module';
-import { AppRoutingModule } from './app-routing.module';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
