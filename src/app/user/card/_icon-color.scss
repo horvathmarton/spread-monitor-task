@@ -1,0 +1,46 @@
+$green-primary: #CEF0EF;
+$green-secondary: #00B4AD;
+$blue-primary: #D8E6FF;
+$blue-secondary: #518BFD;
+$yellow-primary: #FFF0DB;
+$yellow-secondary: #FCB148;
+$red-primary: #FEDFE5;
+$red-secondary: #FA5979;
+
+@mixin icon-color($primary-color, $secondary-color) {
+  background: $primary-color;
+  color: $secondary-color;
+}
+
+@mixin status-circle-color($color) {
+  border: 2px solid $color;
+}
+
+.green-icon {
+  @include icon-color($green-primary, $green-secondary);
+  .green-status-circle {
+    @include status-circle-color($green-secondary);
+  }
+}
+
+.blue-icon {
+  @include icon-color($blue-primary, $blue-secondary);
+  .blue-status-circle {
+    @include status-circle-color($blue-secondary);
+  }
+}
+
+.yellow-icon {
+  @include icon-color($yellow-primary, $yellow-secondary);
+  .yellow-status-circle {
+    @include status-circle-color($yellow-secondary);
+  }
+}
+
+.red-icon {
+  @include icon-color($red-primary, $red-secondary);
+  .red-status-circle {
+    @include status-circle-color($red-secondary);
+  }
+
+}

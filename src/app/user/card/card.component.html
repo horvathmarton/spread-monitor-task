@@ -1,40 +1,41 @@
-<article class="user-card m-4">
-  <div class="text-center mt-4">
+<article class="text-center m-4 user-card">
 
-    <div class="container rounded-circle mx-auto profile-picture"
-         [ngClass]="{'0': 'green-icon','1':'blue-icon','2':'yellow-icon','3':'red-icon'}[profileIconColor]">
-      <span class="mx-auto">
-        {{ user.first_name[0] + user.last_name[0] }}
-        <span class="rounded-circle profile-picture__status-circle"
-              [ngClass]="{'0': 'green-status-circle','1':'blue-status-circle',
-              '2':'yellow-status-circle','3':'red-status-circle'}[profileIconColor]">
-      </span>
-      </span>
-    </div>
+  <figure class="rounded-circle mx-auto mt-4 profile-picture"
+       [ngClass]="{'0': 'green-icon','1':'blue-icon','2':'yellow-icon','3':'red-icon'}[profileIconColor]">
+    <section class="mx-auto">
 
-    <div class="mt-4">
-      <div class="user-card__name">{{ user.first_name }} {{ user.last_name }}</div>
-      <div class="text-secondary user-card__username">@{{ user.username }}</div>
-    </div>
+      {{ user.first_name[0] + user.last_name[0] }}
 
-    <div class="text-secondary mt-4 user-card__icons">
-      <i class="fa fa-pencil-square-o mx-4 p-3"></i>
-      <i class="fa fa-bell-o mx-4 p-3" [ngClass]="(user.alert)?'text-primary':'text-secondary'"></i>
-      <i class="fa fa-trash-o mx-4 p-3"></i>
-    </div>
+      <figure class="rounded-circle profile-picture__status-circle"
+            [ngClass]="{'0': 'green-status-circle','1':'blue-status-circle',
+            '2':'yellow-status-circle','3':'red-status-circle'}[profileIconColor]">
+      </figure>
 
-    <div class="py-3 mt-3 user-card__activity">
-      <img src="../../../assets/graph.png" class="img-fluid ml-5 user-card__graph">
-      <div class="mr-5 user-card__tasks">
-        <div class="user-card__task-count">{{user.tasks}}</div>
-        <div class="text-secondary user-card__task-text">Open Tasks</div>
-      </div>
-    </div>
+    </section>
+  </figure>
 
-    <div class="text-secondary buttons">
-      <div class="p-3 buttons__cards-button"><i class="fa fa-th-large mx-4"> CARDS</i></div>
-      <div class="p-3 buttons__profile-button"><i class="fa fa-user mx-4"> PROFILE</i></div>
-    </div>
+  <section class="mt-4 name-info">
+    <section class="name-info__name">{{ user.first_name }} {{ user.last_name }}</section>
+    <section class="text-secondary name-info__username">@{{ user.username }}</section>
+  </section>
 
-  </div>
+  <section class="text-secondary mt-4 icons">
+    <i class="fa fa-pencil-square-o mx-4 p-3"></i>
+    <i class="fa fa-bell-o mx-4 p-3" [ngClass]="(user.alert)?'text-primary':'text-secondary'"></i>
+    <i class="fa fa-trash-o mx-4 p-3"></i>
+  </section>
+
+  <section class="py-3 mt-3 activity">
+    <img src="../../../assets/graph.png" class="img-fluid ml-5 activity__graph">
+    <section class="mr-5 tasks">
+      <section class="tasks__task-count">{{user.tasks}}</section>
+      <section class="text-secondary tasks__task-text">Open Tasks</section>
+    </section>
+  </section>
+
+  <section class="text-secondary buttons">
+    <section class="p-3 buttons__cards-button"><i class="fa fa-th-large mx-4"> CARDS</i></section>
+    <section class="p-3 buttons__profile-button"><i class="fa fa-user mx-4"> PROFILE</i></section>
+  </section>
+
 </article>

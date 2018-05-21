@@ -1,125 +1,95 @@
-$green-primary: #CEF0EF;
-$green-secondary: #00B4AD;
-$blue-primary: #D8E6FF;
-$blue-secondary: #518BFD;
-$yellow-primary: #FFF0DB;
-$yellow-secondary: #FCB148;
-$red-primary: #FEDFE5;
-$red-secondary: #FA5979;
+@import "icon-color";
+
+$primary-color: white;
+$secondary-color: lightgray;
 
 .user-card {
-  background: white;
+
+  background: $primary-color;
   display: inline-block;
   min-width: 20vw;
+
 }
 
 .profile-picture {
+
   align-items: center;
   display: flex;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 1.25em;
-  height: 10vh;
   position: relative;
+  height: 10vh;
   width: 10vh;
+
+  .profile-picture__status-circle {
+    background: $primary-color;
+    bottom: 1%;
+    left: 1%;
+    box-shadow: 0 0 0 2px $primary-color;
+    position: absolute;
+    height: 1.25vh;
+    width: 1.25vh;
+  }
+
 }
 
-.green-icon {
-  background: $green-primary;
-  color: $green-secondary;
+.name-info {
+
+  .name-info__name {
+    font-size: 1.25em;
+  }
+
+  .name-info__username {
+    font-size: 0.75em;
+  }
+
 }
 
-.green-status-circle {
-  border: 2px solid $green-secondary;
-}
-
-.blue-icon {
-  background: $blue-primary;
-  color: $blue-secondary;
-}
-
-.blue-status-circle {
-  border: 2px solid $blue-secondary;
-}
-
-.yellow-icon {
-  background: $yellow-primary;
-  color: $yellow-secondary;
-}
-
-.yellow-status-circle {
-  border: 2px solid $yellow-secondary;
-}
-
-.red-icon {
-  background: $red-primary;
-  color: $red-secondary;
-}
-
-.red-status-circle {
-  border: 2px solid $red-secondary;
-}
-
-.profile-picture__status-circle {
-  background: white;
-  bottom: 8%;
-  left: 8%;
-  height: 1.25vh;
-  box-shadow: 0 0 0 2px white;
-  position: absolute;
-  width: 1.25vh;
-}
-
-.user-card__name {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+.icons {
   font-size: 1.25em;
 }
 
-.user-card__username {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 0.75em;
-}
-
-.user-card__icons {
-  font-size: 1.25em;
-}
-
-.user-card__activity {
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
+.activity {
+  border-top: 1px solid $secondary-color;
+  border-bottom: 1px solid $secondary-color;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-rows: auto;
   grid-template-areas: "graph tasks";
-}
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 
-.user-card__graph {
-  grid-area: graph;
-}
+  .activity__graph {
+    grid-area: graph;
+  }
 
-.user-card__tasks {
-  grid-area: tasks;
-}
+  .tasks {
 
-.user-card__task-count {
-  font-size: 2.5em;
-}
+    grid-area: tasks;
 
-.user-card__task-text {
-  font-size: 0.75em;
+    .tasks__task-count {
+      font-size: 2.5em;
+    }
+
+    .tasks__task-text {
+      font-size: 0.75em;
+    }
+
+  }
+
 }
 
 .buttons {
+
   display: grid;
+  grid-template-areas: "cards profile";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "cards profile";
-}
 
-.buttons__cards-button {
-  border-right: 1px solid lightgray;
-  grid-area: cards;
-}
+  .buttons__cards-button {
+    border-right: 1px solid $secondary-color;
+    grid-area: cards;
+  }
 
-.buttons__profile-button {
-  grid-area: profile;
+  .buttons__profile-button {
+    grid-area: profile;
+  }
+
 }
