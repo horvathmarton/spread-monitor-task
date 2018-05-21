@@ -1,9 +1,74 @@
 $primary-color: white;
+$secondary-color: lightgray;
 $shadow-color: lightgray;
 
+@mixin text-style() {
+  color: $secondary-color;
+  font-size: 1.25em;
+}
+
 .header {
+
   background: $primary-color;
   border-radius: 15px 15px 0 0;
   box-shadow: 0 10px 50px -30px $shadow-color;
-  min-height: 8vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "tools title profile";
+
+  .tools {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "boards search .";
+    grid-area: tools;
+
+    .tools__boards {
+      @include text-style();
+      grid-area: boards;
+    }
+
+    .tools__search {
+      @include text-style();
+      grid-area: search;
+    }
+
+  }
+
+  .title {
+
+    font-size: 1.3em;
+    grid-area: title;
+
+    .title__text {
+      font-family: 'Kaushan Script', cursive;
+      font-weight: bold;
+    }
+
+    .title__icon {
+      color: $secondary-color;
+    }
+
+  }
+
+  .profile {
+
+    grid-area: profile;
+
+    .profile__text {
+      @include text-style();
+    }
+
+    .profile__alert {
+      @include text-style();
+    }
+
+    .profile__menu {
+      border-left: 1px solid $secondary-color;
+      @include text-style();
+      height: 100%;
+    }
+
+  }
+
 }
