@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit {
     private productService: ProductService
   ) { }
 
-  updateProduct(id: number, data: Object) {
+  updateProduct(id: number, data) {
     const product = this.products.find(p => p.id === id);
     product.name = data.name;
     product.description = data.description;

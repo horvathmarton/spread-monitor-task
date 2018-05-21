@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
     private userService: UserService
   ) { }
 
-  updateUser(id: number, data: Object) {
+  updateUser(id: number, data) {
     const user = this.users.find(u => u.id === id);
     user.first_name = data.first_name;
     user.last_name = data.last_name;

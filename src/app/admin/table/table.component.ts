@@ -37,7 +37,7 @@ export class TableComponent implements OnInit {
     this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
-  editRecord(record: MatRow): void {
+  editRecord(record): void {
     const config = new MatDialogConfig();
     config.disableClose = true;
     config.autoFocus = true;
