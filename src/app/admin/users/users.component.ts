@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import {User} from '../../models/User';
+import { User } from '../../models/User';
 import { DataStructure } from '../../models/DataStructure';
+import { UserEditorDialogComponent } from './user-editor-dialog/user-editor-dialog.component';
 
 import { UserService } from '../../services/user.service';
-import {UserEditorDialogComponent} from './user-editor-dialog/user-editor-dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -18,7 +18,8 @@ export class UsersComponent implements OnInit {
     name: 'users',
     data: [],
     schema: ['id', 'first_name', 'last_name', 'email', 'username'],
-    editorDialog: UserEditorDialogComponent
+    editorDialog: UserEditorDialogComponent,
+    updateFunction: this.updateUser.bind(this)
   };
 
   constructor(
@@ -27,7 +28,16 @@ export class UsersComponent implements OnInit {
     private userService: UserService
   ) { }
 
-  filterUsers(users: User[]): User[] {
+  updateUser(id: number, data: Object) {
+    const user = this.users.find(u => u.id === id);
+    user.first_name = data.first_name;
+    user.last_name = data.last_name;
+    user.email = data.email;
+    user.username = data.username;
+    this.userService.updateUser(user).subscribe();
+  }
+
+  private filterUsers(users: User[]): User[] {
     const filterTerm = this.route.snapshot.queryParamMap.get('filter');
     if (!filterTerm) { return users; }
     return users.filter((u) => {

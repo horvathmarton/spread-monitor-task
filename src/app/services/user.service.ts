@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/index';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../models/User';
 
@@ -15,5 +15,11 @@ export class UserService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
+  }
+
+  updateUser(user: User): Observable<any> {
+    return this.http.put(this.usersUrl, user, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
   }
 }

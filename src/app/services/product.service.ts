@@ -17,7 +17,7 @@ export class ProductService {
     return this.http.get<Product[]>(this.productUrl);
   }
 
-  updateProduct (product: Product): Observable<any> {
+  updateProduct(product: Product): Observable<any> {
     return this.http.put(this.productUrl, product, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     });
