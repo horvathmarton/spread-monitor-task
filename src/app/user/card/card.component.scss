@@ -2,6 +2,7 @@
 
 $primary-color: white;
 $secondary-color: lightgray;
+$hover-color: #007bff;
 
 .user-card {
 
@@ -45,7 +46,12 @@ $secondary-color: lightgray;
 }
 
 .icons {
+  color: $secondary-color;
   font-size: 1.25em;
+}
+
+.icons *:hover {
+  color: $hover-color !important;
 }
 
 .activity {
@@ -78,6 +84,7 @@ $secondary-color: lightgray;
 
 .buttons {
 
+  color: $secondary-color;
   display: grid;
   grid-template-areas: "cards profile";
   grid-template-columns: 1fr 1fr;
@@ -88,8 +95,16 @@ $secondary-color: lightgray;
     grid-area: cards;
   }
 
+  .buttons__cards-button:hover {
+    color: $hover-color;
+  }
+
   .buttons__profile-button {
     grid-area: profile;
+  }
+
+  .buttons__profile-button:hover {
+    color: $hover-color;
   }
 
 }

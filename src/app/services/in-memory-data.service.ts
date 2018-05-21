@@ -350,6 +350,16 @@ export class InMemoryDataService implements InMemoryDbService {
         'username': 'amelvillee',
         'tasks': 44,
         'alert': true
+      },
+      {
+        'id': 16,
+        'first_name': 'Lorem',
+        'last_name': 'Ipsum',
+        'email': 'asdf@asdf.com',
+        'password': 'asdfasdf',
+        'username': 'hello',
+        'tasks': 90,
+        'alert': false
       }];
 
     return {

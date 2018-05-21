@@ -16,10 +16,10 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { HeaderComponent } from './user/header/header.component';
 import { CardComponent } from './user/card/card.component';
 import { ProductEditorDialogComponent } from './admin/products/product-editor-dialog/product-editor-dialog.component';
-
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { UserEditorDialogComponent } from './admin/users/user-editor-dialog/user-editor-dialog.component';
 import { NavigationComponent } from './admin/navigation/navigation.component';
+
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
