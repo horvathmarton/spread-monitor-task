@@ -8,14 +8,12 @@ import { UserService } from './user.service';
 })
 export class AuthenticationService {
 
-  private token: string;
-
   constructor(
     private router: Router,
     private userService: UserService
   ) { }
 
-  login(email: string, password: string): void {
+  login(email: string, password: string): Promise<boolean> {
     this.userService.getUsers()
       .subscribe(users => {
         if (users.find(user => user.email === email && user.password === password)) {
