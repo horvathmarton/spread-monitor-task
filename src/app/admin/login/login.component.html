@@ -1,14 +1,20 @@
 <h1 class="text-center display-4 my-5">Authentication required</h1>
 
-<form (submit)="onLogin(f)" #f="ngForm" class="login">
+<form (ngSubmit)="onLogin()" [formGroup]="loginForm" class="login">
 
-  <mat-form-field class="login__field">
-    <input matInput ngModel name="email" placeholder="Enter your email address">
+  <mat-form-field class="mt-4 login__field">
+    <input matInput formControlName="email" placeholder="Enter your email">
+    <mat-error *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
+      Please enter a valid email address!
+    </mat-error>
   </mat-form-field>
 
-  <mat-form-field class="login__field">
-    <input matInput ngModel name="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+  <mat-form-field class="mt-4 login__field">
+    <input matInput formControlName="password" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    <mat-error *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+      Please enter a password between 6 and 12 characters!
+    </mat-error>
   </mat-form-field>
 
   <button type="submit" mat-button>Login</button>
