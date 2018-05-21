@@ -1,16 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import {DataStructure} from '../../models/DataStructure';
-import {PaginationInfo} from '../../models/PaginationInfo';
-
-import {UserService} from '../../services/user.service';
 import {User} from '../../models/User';
+import { DataStructure } from '../../models/DataStructure';
+
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
 
@@ -19,11 +17,6 @@ export class UsersComponent implements OnInit {
     name: 'users',
     data: [],
     schema: ['id', 'first_name', 'last_name', 'email', 'username']
-  };
-
-  usersPaginationInfo: PaginationInfo = {
-    limit: +this.route.snapshot.queryParamMap.get('limit') || 10,
-    offset: +this.route.snapshot.queryParamMap.get('offset') || 0
   };
 
   constructor(
@@ -36,14 +29,13 @@ export class UsersComponent implements OnInit {
     const filterTerm = this.route.snapshot.queryParamMap.get('filter');
     if (!filterTerm) { return users; }
     return users.filter((u) => {
-      return u.first_name.includes(filterTerm) || u.last_name.includes(filterTerm)
-        || u.email.includes(filterTerm) || u.username.includes(filterTerm);
+      return u.first_name.includes(filterTerm) || u.last_name.includes(filterTerm) || u.email.includes(filterTerm)
+        || u.username.includes(filterTerm);
     });
   }
 
   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe((users) => {
+    this.userService.getUsers().subscribe((users) => {
         this.users = users;
         this.usersDataStructure.data = this.filterUsers(users);
       });
