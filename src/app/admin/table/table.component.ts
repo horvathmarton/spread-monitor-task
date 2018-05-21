@@ -15,19 +15,27 @@ export class TableComponent implements OnInit {
 
   firstEntryIndex: number;
   lastEntryIndex: number;
+  filterTerm: string;
 
   constructor(private router: Router) { }
 
   onPagination(event: PageEvent) {
     this.firstEntryIndex = event.pageIndex * event.pageSize;
     this.lastEntryIndex = this.firstEntryIndex + event.pageSize;
+    this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
   onSearch(form: NgForm) {
-    const term = form.value.term;
-    console.log(term);
-    if (!term) { return; }
-    this.router.navigate(['/products'], { queryParams: { filter: term } });
+    this.filterTerm = form.value.term;
+    this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
+  }
+
+  getQueryParams() {
+    return {
+      filter: this.filterTerm,
+      offset: this.firstEntryIndex,
+      limit: this.lastEntryIndex - this.firstEntryIndex
+    };
   }
 
   ngOnInit() {

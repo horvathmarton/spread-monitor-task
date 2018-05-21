@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 import {DataStructure} from '../../models/DataStructure';
 import {PaginationInfo} from '../../models/PaginationInfo';
 
 import {UserService} from '../../services/user.service';
+import {Product} from '../../models/Product';
+import {User} from '../../models/User';
 
 @Component({
   selector: 'app-users',
@@ -13,6 +15,7 @@ import {UserService} from '../../services/user.service';
 })
 export class UsersComponent implements OnInit {
 
+  users: User[] = [];
   usersDataStructure: DataStructure = {
     name: 'users',
     data: [],
@@ -26,12 +29,27 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private userService: UserService
   ) { }
 
+  filterUsers(users: User[]): User[] {
+    const filterTerm = this.route.snapshot.queryParamMap.get('filter');
+    if (!filterTerm) { return users; }
+    return users.filter((u) => {
+      return u.first_name.includes(filterTerm) || u.last_name.includes(filterTerm) || u.email.includes(filterTerm);
+    });
+  }
+
   ngOnInit() {
     this.userService.getUsers()
-      .subscribe(users => this.usersDataStructure.data = users);
+      .subscribe((users) => {
+        this.users = users;
+        this.usersDataStructure.data = this.filterUsers(users);
+      });
+
+    this.router.events
+      .subscribe(_ => this.usersDataStructure.data = this.filterUsers(this.users));
   }
 
 }
