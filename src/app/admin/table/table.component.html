@@ -1,10 +1,10 @@
 <h1 class="text-center display-4 my-5">{{ dataStructure.name | titlecase }}</h1>
 
 <section class="ml-5 control">
-  <form (submit)="onSearch(f)" #f="ngForm" class="search">
+  <form (ngSubmit)="onSearch()" [formGroup]="searchForm" class="search">
 
     <mat-form-field class="mr-3 search__field">
-      <input matInput ngModel name="term" placeholder="Enter your search filter here">
+      <input matInput ngModel formControlName="searchTerm" placeholder="Enter your search filter here">
     </mat-form-field>
 
     <button type="submit" mat-button>Search</button>

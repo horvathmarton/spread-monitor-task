@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatRow, PageEvent } from '@angular/material';
-import { NgForm } from '@angular/forms';
+import {FormControl, FormGroup, NgForm} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthenticationService } from '../../services/authentication.service';
@@ -16,7 +16,8 @@ export class TableComponent implements OnInit {
 
   firstEntryIndex: number;
   lastEntryIndex: number;
-  filterTerm: string;
+  searchForm: FormGroup;
+  private filterTerm: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,8 +31,8 @@ export class TableComponent implements OnInit {
     this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
-  onSearch(form: NgForm): void {
-    this.filterTerm = form.value.term;
+  onSearch(): void {
+    this.filterTerm = this.searchForm.value.searchTerm;
     this.router.navigate([`/${this.dataStructure.name}`], { queryParams: this.getQueryParams() });
   }
 
@@ -53,6 +54,10 @@ export class TableComponent implements OnInit {
     const offset = +this.route.snapshot.queryParamMap.get('offset') || 0;
     this.firstEntryIndex = offset;
     this.lastEntryIndex = offset + limit;
+
+    this.searchForm = new FormGroup({
+      'searchTerm': new FormControl(null)
+    });
   }
 
 }
